@@ -6,6 +6,7 @@ pip3 install ansible
 ansible-galaxy collection install azure.azcollection
 pip3 install -r ~/.ansible/collections/ansible_collections/azure/azcollection/requirements-azure.txt
 
+source env_vars.sh
 mkdir ~/.azure
 cat > ~/.azure/credentials << EOF
 [default]
@@ -14,8 +15,6 @@ client_id=$TF_VAR_azure_client_id
 secret=$TF_VAR_azure_secret
 tenant=$TF_VAR_azure_tenant
 EOF
-
-source env_vars.sh
 
 git clone https://github.com/korsakjakub/terraform-ansible-bsf-test
 cd terraform-ansible-bsf-test/vm/ansible
