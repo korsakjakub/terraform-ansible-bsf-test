@@ -1,5 +1,3 @@
-#!/bin/bash
-
 apt  update -y
 apt install -y python3-pip
 pip3 install ansible
@@ -9,10 +7,10 @@ pip3 install -r ~/.ansible/collections/ansible_collections/azure/azcollection/re
 mkdir ~/.azure
 cat > ~/.azure/credentials << EOF
 [default]
-subscription_id=$1
-client_id=$2
-secret=$3
-tenant=$4
+subscription_id=$TF_VAR_azure_subscription_id
+client_id=$TF_VAR_azure_client_id
+secret=$TF_VAR_azure_secret
+tenant=$TF_VAR_azure_tenant
 EOF
 
 git clone https://github.com/korsakjakub/terraform-ansible-bsf-test
