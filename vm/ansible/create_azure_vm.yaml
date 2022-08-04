@@ -69,4 +69,4 @@
     copy:
       dest: "./inventory"
       content: |
-        test_vm ansible_user={{ user_name }} ansible_host={{ output_ip_address.state.ip_address }}
+        test_vm ansible_user={{ user_name }} ansible_host={{ output_ip_address.state.ip_address }} ansible_ssh_common_args='-o StrictHostKeyChecking=no'
