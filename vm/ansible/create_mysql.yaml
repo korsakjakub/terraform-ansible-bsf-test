@@ -1,0 +1,7 @@
+- name: create MySQL on vm 
+  hosts: test_vm
+  become: yes
+  vars_files:
+    - vars/mysql.yaml
+  roles:
+    - role: geerlingguy.mysql

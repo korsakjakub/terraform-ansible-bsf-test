@@ -1,0 +1,5 @@
+mysql_databases:
+  - name: mysql_db
+mysql_users:
+  - name: azureuser
+    password: haslotodupa8
