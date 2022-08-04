@@ -29,7 +29,7 @@ resource "google_compute_instance" "default" {
     }
   }
 
-  metadata_startup_script  = "${file("./ansible_payload.sh ${var.azure_subscription_id} ${var.azure_client_id} ${var.azure_secret} ${var.azure_tenant}")}"
+  metadata_startup_script = "${join("\n", ["${file("env_vars.sh")}", "${file("ansible_payload.sh")}"])}"
 }
 
 resource "google_compute_firewall" "default" {
