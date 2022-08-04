@@ -2,7 +2,7 @@
   vars:
     rg_name: ansibleVMTest
     user_name: azureuser
-    ssh_pubkey: # TU TRZEBA WSTAWIĆ SWÓJ KLUCZ PUBLICZNY
+    ssh_pubkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
   hosts: localhost
   connection: local
   tasks:
