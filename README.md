@@ -6,5 +6,12 @@
 
 
 ## Managing secrets:
-Add environmental variables to `env_vars.sh` 
+Add environmental variables to `env_vars.sh`, then source it and do
+```sh
+terraform plan
+terraform apply
+```
+
 After running `terraform apply` in `bucket` directory, take the bucket name from output and paste into `main.tf -> terraform -> backend -> bucket`
+
+Also remember to get credentials JSON from google...
