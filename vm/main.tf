@@ -1,6 +1,6 @@
 terraform {
  backend "gcs" {
-   bucket  = ## BUCKET CREATED WITH THE FIRST TF SCRIPT "bucket-tfstate-41059f6442f78075"
+   bucket  = "bucket-tfstate-087a1ede07d3df3f"
    prefix  = "terraform/state"
  }
 }
@@ -29,7 +29,7 @@ resource "google_compute_instance" "default" {
     }
   }
 
-  metadata_startup_script  = "${file("./ansible_payload.sh")}"
+  metadata_startup_script  = "${file("./ansible_payload.sh ${var.azure_subscription_id} ${var.azure_client_id} ${var.azure_secret} ${var.azure_tenant}")}"
 }
 
 resource "google_compute_firewall" "default" {
