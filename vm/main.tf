@@ -6,7 +6,8 @@ terraform {
 }
 
 resource "google_compute_instance" "default" {
-  name         = "${var.instance_name}"
+  count        = "${var.vm_count}"
+  name         = "${var.instance_name}-${count.index}"
   machine_type = "${var.machine_type}"
   tags         = "${var.tags}"
   zone         = "${var.region}"

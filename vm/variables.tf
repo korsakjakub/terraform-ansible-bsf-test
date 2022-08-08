@@ -3,6 +3,11 @@ variable "machine_type" {
   default = "n1-standard-1"
 }
 
+variable "vm_count" {
+  description = "Number of GCP Compute Instances to create"
+  default = 1
+}
+
 variable "region" {
   description = "gcp region for specified instance"
   type = string
