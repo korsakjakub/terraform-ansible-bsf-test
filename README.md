@@ -1,6 +1,6 @@
 # Terraform x Ansible learning BSF
 
-- Use terraform to create a GCP Compute Instance
+- Use terraform to create a number of GCP Compute Instances (count defined in variables.tf)
 - On the Compute instance use ansible as payload to create Azure VM
 - On the Azure VM install MySQL
 
