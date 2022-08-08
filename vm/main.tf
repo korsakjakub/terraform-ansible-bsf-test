@@ -47,7 +47,3 @@ resource "google_compute_firewall" "default" {
     source_ranges = ["0.0.0.0/0"]
     target_tags = ["web"]
 }
-
-output "ip" {
-  value = "${google_compute_instance.default.network_interface.0.access_config.0.nat_ip}"
-}
