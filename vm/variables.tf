@@ -35,6 +35,12 @@ variable "tags" {
   default=["ansible-payload"]
 }
 
+variable "open_ports" {
+  type = list
+  description = "List of all open ports on a VM"
+  default = ["80", "443"]
+}
+
 variable "azure_subscription_id" {
   type = string
 }
